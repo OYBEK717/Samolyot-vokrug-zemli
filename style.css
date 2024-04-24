@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+    overflow: hidden;
+}
+.er_shari{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: blue url(er_shari.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    animation: animate 12s linear infinite;
+}
+.er_shari:active{
+    transform: scale(5);
+}
+.er_shari::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url(bulut.png);
+    background-size: cover;
+    animation: animate 18s linear infinite;
+    z-index: 1;
+}
+.er_shari img{
+    position: absolute;
+    z-index: 2;
+    transition: 0.5s;
+    pointer-events: none;
+    width: 200px;
+    height: 200px;
+}
+.er_shari:active img{
+    transform: scale(0.2);
+}
+@keyframes animate{
+    0%{
+        background-position:  0 0;
+    }
+    100%{
+        background-position:  719px 0;
+    }
+}
